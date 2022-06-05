@@ -1,17 +1,22 @@
+
+
 class Casino {
     constructor(name) {
-        timesPlayed = 0
+        this.timesPlayed = 0
+        this.name = name
+
     }
     playGame(betAmount) {
         let chance = Math.random();
         if (chance >= 0.5) {
-            console.log(this + 'wins')
+            console.log(this.name + ' wins')
         } else {
-            winnnings = betAmount * this.timesPlayed + 1
-            console.log('you won' + winnnings + Casino.name + 'wins')
+            let winnnings = betAmount * (this.timesPlayed + 1)
+            console.log('you won', winnnings)
 
         }
-        timesPlayed++
+        this.timesPlayed++
+        console.log(this.timesPlayed)
     }
 };
 
@@ -22,6 +27,7 @@ myCasino.playGame(5);
 myCasino.playGame(15);
 myCasino.playGame(25);
 myCasino.playGame(35);
+
 
 // BONUS TESTS
 /*
